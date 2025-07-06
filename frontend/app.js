@@ -1,7 +1,5 @@
 const API_URL = "http://localhost:5000";
 
-// 🟢 Define all your functions first
-
 async function loadAudits() {
   const response = await fetch(`${API_URL}/audits`);
   const audits = await response.json();
@@ -84,10 +82,8 @@ async function submitCAPA(event, findingId) {
   form.reset();
 }
 
-// 🟢 Make global if you're using inline HTML events
 window.submitCAPA = submitCAPA;
 
-// 🟢 Now safely call loadAudits when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
   loadAudits();
 });
